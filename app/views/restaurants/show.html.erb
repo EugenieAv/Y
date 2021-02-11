@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="restaurant-titles-show">
+    <h1><%= @restaurant.name %> </h1>
+    <h4>
+      Come to enjoy wonderful
+      <em><%= @restaurant.category %></em>
+      dishes at <em>  <%= @restaurant.address %></em>
+    </h4>
+    <h5>
+      Contact us : <%= @restaurant.phone_number %>
+    </h5>
+  </div>
+
+  <% if !@restaurant.reviews.empty? %>
+    <div class="read-reviews">
+      <h5><strong>Ours clients reviews :</strong> </h5>
+      <% @restaurant.reviews.each do |review| %>
+        <div class="review-container">
+          <p>
+            <% (review.rating).times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </p>
+          <p>
+            <%= review.content %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="leave-review" id="leave-a-review">
+    <p><em>
+      If you enjoyed your meal, tell us. We'll appreciate a lot.
+      And if you have some suggestion to help us to getting better, tell us as well.
+      Thanks a lot  <3
+    </em></p>
+    <%= render "/reviews/new", restaurant: @restaurant, review: @review %>
+  </div>
+</div>

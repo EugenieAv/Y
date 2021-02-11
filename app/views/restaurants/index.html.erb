@@ -1,1 +1,12 @@
-<h1>Listes des restaurants</h1>
+<div class="container">
+  <h1>Mes restaurants préférés </h1>
+
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant)  do %>
+      <div>
+        <%= restaurant.name %>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

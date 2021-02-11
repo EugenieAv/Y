@@ -1,0 +1,8 @@
+<div class="navbar-restaurant">
+  <%= link_to "All restaurants", restaurants_path  %>
+  <% if controller_name == "restaurants" && action_name == "show" %>
+    <%= link_to "Add a review", restaurant_path(@restaurant, anchor: "leave-a-review")  %>
+  <% elsif controller_name == "restaurants" && action_name == "index" %>
+    <%= link_to "+ Restaurant", new_restaurant_path  %>
+  <% end %>
+</div>

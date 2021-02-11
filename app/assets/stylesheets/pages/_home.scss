@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+
+h1 {
+  text-align: center;
+}
+
+a{
+  color: #EA8A6F;
+  transition: ease font-size 500ms;
+  &:hover {
+    text-decoration: none;
+    color: #723D46;
+    font-size: 20px;
+  }
+}
